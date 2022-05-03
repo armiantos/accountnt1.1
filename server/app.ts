@@ -1,7 +1,14 @@
 import express from 'express'
 
-export const app = express()
+import {sampleEndpointRouter} from './routes/sampleEndpoint'
+
+const app = express()
 const port = 3000
+
+const apiRouter = express.Router()
+apiRouter.use('/sample_endpoint', sampleEndpointRouter)
+
+app.use('/api/v1', apiRouter)
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
