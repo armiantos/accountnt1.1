@@ -11,7 +11,7 @@
     cd client/
     npm i
     ```
-2. Run local server
+2. Run local server at [localhost:3000](http://localhost:3000)
     ```shell
     npm start
     ```
