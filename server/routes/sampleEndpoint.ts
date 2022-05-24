@@ -1,9 +1,11 @@
-import express from 'express'
+import express from 'express';
 
-export const sampleEndpointRouter = express.Router()
+export const sampleEndpointRouter = express.Router();
+
+let example;
 
 sampleEndpointRouter.get('/', (req, res) => {
     res.json({
-        msg: "Hello world"
-    })
-})
+        msg: 'Hello world',
+    });
+});
