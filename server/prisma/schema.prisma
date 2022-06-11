@@ -9,3 +9,20 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id String @id
+  email String @unique
+  name String
+  inventoryItems InventoryItem[]
+}
+
+model InventoryItem {
+  id Int @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name String
+  amount Int @default(0)
+  owner User @relation(fields: [ownerId], references: [id])
+  ownerId String
+}
