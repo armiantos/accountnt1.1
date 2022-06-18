@@ -5,8 +5,8 @@
         "test": "jest",
         "build": "tsc",
         "prestart": "npm run build",
-        "start": "node build/app.js",
-        "start:dev": "nodemon app.ts",
+        "start": "node build/main.js",
+        "start:dev": "nodemon main.ts",
         "format": "prettier --write routes",
         "lint": "eslint --ext  .tsx,.ts,.jsx,.js --max-warnings 0 routes/"
     },
@@ -17,6 +17,7 @@
     "devDependencies": {
         "@types/express": "^4.17.13",
         "@types/jest": "^28.1.2",
+        "@types/supertest": "^2.0.12",
         "@typescript-eslint/eslint-plugin": "^5.22.0",
         "@typescript-eslint/parser": "^5.22.0",
         "eslint": "^8.14.0",
