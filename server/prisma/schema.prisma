@@ -23,6 +23,6 @@ model InventoryItem {
   updatedAt DateTime @updatedAt
   name String
   amount Int @default(0)
-  owner User @relation(fields: [ownerId], references: [id])
+  owner User @relation(fields: [ownerId], references: [id], onDelete: Cascade)
   ownerId String
 }
