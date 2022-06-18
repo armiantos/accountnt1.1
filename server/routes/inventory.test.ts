@@ -7,7 +7,7 @@ import { bob } from '../prisma/fixtures/user';
 
 describe('inventory', () => {
     beforeAll(async () => {
-        prisma.user.create({
+        await prisma.user.create({
             data: {
                 ...bob,
                 inventoryItems: {
@@ -18,7 +18,7 @@ describe('inventory', () => {
     });
 
     afterAll(async () => {
-        prisma.user.delete({ where: { id: bob.id } });
+        await prisma.user.delete({ where: { id: bob.id } });
     });
 
     it('GET / returns mock inventory items', async () => {
