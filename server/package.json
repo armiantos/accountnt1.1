@@ -2,7 +2,7 @@
     "name": "server",
     "version": "0.1.0",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "jest",
         "build": "tsc",
         "prestart": "npm run build",
         "start": "node build/app.js",
