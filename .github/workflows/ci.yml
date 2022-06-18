@@ -37,8 +37,6 @@ jobs:
     defaults:
       run:
         working-directory: ./server
-        env:
-          DATABASE_URL: postgresql://postgres:postgres@localhost:5433/accountnt-test?schema=public
 
     strategy:
       matrix:
@@ -71,4 +69,8 @@ jobs:
       - run: npm run lint
       - run: npm run build
       - run: npx prisma migrate dev
+        env:
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5433/accountnt-test?schema=public
       - run: npm test
+        env:
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5433/accountnt-test?schema=public
