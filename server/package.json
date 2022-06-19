@@ -2,26 +2,31 @@
     "name": "server",
     "version": "0.1.0",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "jest",
         "build": "tsc",
         "prestart": "npm run build",
-        "start": "node build/app.js",
-        "start:dev": "nodemon app.ts",
+        "start": "node build/main.js",
+        "start:dev": "nodemon main.ts",
         "format": "prettier --write routes",
         "lint": "eslint --ext  .tsx,.ts,.jsx,.js --max-warnings 0 routes/"
     },
     "dependencies": {
         "express": "^4.18.1",
-        "nodemon": "^2.0.16",
-        "typescript": "^4.6.4"
+        "nodemon": "^2.0.16"
     },
     "devDependencies": {
         "@types/express": "^4.17.13",
-        "ts-node": "^10.7.0",
+        "@types/jest": "^28.1.2",
+        "@types/supertest": "^2.0.12",
         "@typescript-eslint/eslint-plugin": "^5.22.0",
         "@typescript-eslint/parser": "^5.22.0",
         "eslint": "^8.14.0",
         "eslint-plugin-prettier": "^4.0.0",
-        "prettier": "2.6.2"
+        "jest": "^28.1.1",
+        "prettier": "2.6.2",
+        "supertest": "^6.2.3",
+        "ts-jest": "^28.0.5",
+        "ts-node": "^10.7.0",
+        "typescript": "^4.7.4"
     }
 }
