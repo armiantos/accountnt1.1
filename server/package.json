@@ -2,17 +2,19 @@
     "name": "server",
     "version": "0.1.0",
     "scripts": {
-        "test": "jest",
+        "test": "dotenv -e .env.test -- jest",
         "build": "tsc",
         "prestart": "npm run build",
         "start": "node build/main.js",
-        "start:dev": "nodemon main.ts",
+        "start:dev": "dotenv -e .env.development -- nodemon main.ts",
         "format": "prettier --write routes",
         "lint": "eslint --ext  .tsx,.ts,.jsx,.js --max-warnings 0 routes/"
     },
     "dependencies": {
+        "@prisma/client": "^3.15.2",
         "express": "^4.18.1",
-        "nodemon": "^2.0.16"
+        "nodemon": "^2.0.16",
+        "prisma": "^3.15.1"
     },
     "devDependencies": {
         "@types/express": "^4.17.13",
@@ -20,6 +22,7 @@
         "@types/supertest": "^2.0.12",
         "@typescript-eslint/eslint-plugin": "^5.22.0",
         "@typescript-eslint/parser": "^5.22.0",
+        "dotenv-cli": "^5.1.0",
         "eslint": "^8.14.0",
         "eslint-plugin-prettier": "^4.0.0",
         "jest": "^28.1.1",
