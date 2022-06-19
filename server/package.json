@@ -6,7 +6,7 @@
         "build": "tsc",
         "prestart": "npm run build",
         "start": "node build/main.js",
-        "start:dev": "nodemon main.ts",
+        "start:dev": "dotenv -e .env.development -- nodemon main.ts",
         "format": "prettier --write routes",
         "lint": "eslint --ext  .tsx,.ts,.jsx,.js --max-warnings 0 routes/"
     },

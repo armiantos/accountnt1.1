@@ -22,12 +22,10 @@
 1. Set-up a postgres instance on port 5432 with username:password postgres:postgres and a default database with name _accountnt-dev_. You can use the included docker-compose file to do this
 
     ```
-    docker-compose up db -d
+    docker-compose up db
     ```
 
-2. Copy `server/.env.development` to `server/.env` to set is as the default server for development
-
-3. Scaffold the dev (and optionally the test) database(s) using
+2. Scaffold the dev and test databases using
 
     ```
     npx prisma migrate dev                        # for dev
