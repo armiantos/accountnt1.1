@@ -12,7 +12,9 @@
     npm i
     ```
 2. Follow the database setup instructions below
-3. Run local server with auto restart at [localhost:3001](http://localhost:3001)
+3. Copy `.env.development.template` to `.env.development`
+4. Copy the `audience` and `issuer` fields from _accountnt-server's Auth0 API quickstart_ to `.env.development`
+5. Run local server with auto restart at [localhost:3001](http://localhost:3001)
     ```shell
     npm run start:dev
     ```

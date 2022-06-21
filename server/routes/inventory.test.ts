@@ -1,5 +1,6 @@
 import { InventoryItem } from '@prisma/client';
 import request from 'supertest';
+
 import { app } from '../app';
 import { prisma } from '../prisma/client';
 import { apples } from '../prisma/fixtures/inventoryItem';
