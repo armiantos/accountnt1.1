@@ -8,7 +8,9 @@
         "start": "node build/main.js",
         "start:dev": "dotenv -e .env.development -- nodemon main.ts",
         "format": "prettier --write routes",
-        "lint": "eslint --ext  .tsx,.ts,.jsx,.js --max-warnings 0 routes/"
+        "lint": "eslint --ext  .tsx,.ts,.jsx,.js --max-warnings 0 routes/",
+        "migrate:dev": "dotenv -e .env.development -- prisma migrate dev",
+        "migrate:test": "dotenv -e .env.test -- prisma migrate deploy"
     },
     "dependencies": {
         "@prisma/client": "^3.15.2",

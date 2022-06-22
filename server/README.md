@@ -27,18 +27,18 @@
 1. Set-up a postgres instance on port 5432 with username:password postgres:postgres and a default database with name _accountnt-dev_. You can use the included docker-compose file to do this
 
     ```
-    docker-compose up db
+    docker compose up
     ```
 
 2. Scaffold the dev and test databases using
 
     ```
-    npx prisma migrate dev                        # for dev
-    dotenv -e .env.test -- npx prisma migrate dev # for the test database
+    npm run migrate:dev   # for dev
+    npm run migrate:test  # for test
     ```
 
 You can use the following command to terminate the database
 
 ```
-docker-compose down
+docker compose down
 ```
