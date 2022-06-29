@@ -12,7 +12,12 @@
     npm i
     ```
 2. Follow the database setup instructions below
-3. Run local server with auto restart at [localhost:3001](http://localhost:3001)
+3. Copy `.env.development.template` to `.env.development`
+4. Copy the `audience` and `issuer` fields from [_accountnt-server's Auth0 API dashboard_](https://manage.auth0.com/dashboard/) to `.env.development`
+
+    ![auth0 audience and issuer configuration](./docs/img/auth0Config.png)
+
+5. Run local server with auto restart at [localhost:3001](http://localhost:3001)
     ```shell
     npm run start:dev
     ```
@@ -22,18 +27,18 @@
 1. Set-up a postgres instance on port 5432 with username:password postgres:postgres and a default database with name _accountnt-dev_. You can use the included docker-compose file to do this
 
     ```
-    docker-compose up db
+    docker compose up
     ```
 
 2. Scaffold the dev and test databases using
 
     ```
-    npx prisma migrate dev                        # for dev
-    dotenv -e .env.test -- npx prisma migrate dev # for the test database
+    npm run migrate:dev   # for dev
+    npm run migrate:test  # for test
     ```
 
 You can use the following command to terminate the database
 
 ```
-docker-compose down
+docker compose down
 ```
